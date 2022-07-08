@@ -26,8 +26,11 @@
         }
     </style>
     <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script typr="text/javascrupt" src="js/cript.js"></script>    
+        <script type="text/javascript" src="js/cript.js"></script>
         <div class="container">
             <div class="row">
                 <div class="col s4 push-s10">
@@ -53,7 +56,7 @@
                                 Bitcoin<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">BTC</p></div>
                             </td>
                             <td id="demo"></td>
-                            <td>$0.87</td>
+                            <td id="demo1"></td>
                           </tr>
                           <tr>
                             <td>
@@ -61,17 +64,17 @@
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
                                 Ethereum<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">ETH</p></div>
                             </td>
-                            <td>Jellybean</td>
-                            <td>$3.76</td>
+                            <td id="eth"></td>
+                            <td id="eth1"></td>
                           </tr>
                           <tr>
                             <td>
-                                <img src="img/bnb-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95846.png" class="responsive-img">
+                                <img src="img/xlm-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95842.png" class="responsive-img">
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
-                                BNB<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">BNB</p></div>
+                                Stellar<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">XLM</p></div>
                             </td>
-                            <td>Lollipop</td>
-                            <td>$7.00</td>
+                            <td id="st"></td>
+                            <td id="stel1"></td>
                           </tr>
                           <tr>
                             <td> 
@@ -79,8 +82,8 @@
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
                                 Dogecoin<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">DOGE</p></div>
                             </td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
+                            <td id="dog"></td>
+                            <td id="dog1"></td>
                           </tr>
                           <tr>
                             <td> 
@@ -88,8 +91,8 @@
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
                                 TRON<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">TRX</p></div>
                             </td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
+                            <td id="tro"></td>
+                            <td id="tro1"></td>
                           </tr>
                           <tr>
                             <td> 
@@ -97,17 +100,17 @@
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
                                 Cosmos<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">ATOM</p></div>
                             </td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
+                            <td id="cosm"></td>
+                            <td id="cosm1" ></td>
                           </tr>
                           <tr>
                             <td> 
-                                <img src="img/bsv_cryptocurrency_logo_icon_131464.png" class="responsive-img">
+                                <img src="img/ltc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95509.png" class="responsive-img">
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
-                                Bitcoin SV<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">BSV</p></div>
+                                Litecoin<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">LTC</p></div>
                             </td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
+                            <td id="lt"></td>
+                            <td id="lite1"></td>
                           </tr>
                           <tr>
                             <td> 
@@ -115,8 +118,8 @@
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
                                 Zcash<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">ZEC</p></div>
                             </td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
+                            <td id="ztc"></td>
+                            <td id="zc1"></td>
                           </tr>
                           <tr>
                             <td> 
@@ -124,8 +127,8 @@
                                 <div class="ellipsis" style="display: inline-block; vertical-align: centr;">
                                 Ren<p style="font-size: 0.8em; opacity: 0.7; margin-top: 0.1em; margin-bottom: 0.5em;">REN</p></div>
                             </td>
-                            <td>Eclair</td>
-                            <td>$0.87</td>
+                            <td id="re"></td>
+                            <td id="ren1"></td>
                           </tr>
                         </tbody>
                       </table>
