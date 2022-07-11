@@ -26,3 +26,10 @@ p.ellips1{
     margin-top: 0.1em;
     margin-bottom: 0.5em;
 }
+div.convert{
+    position: fixed;
+    margin-top: 10%;
+    width: none;
+    left: 66.6666666667%;
+    
+}
