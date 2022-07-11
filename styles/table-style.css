@@ -1,0 +1,28 @@
+img.responsive-img, video.responsive-video {
+    max-width: 25%;
+    height: 25%;
+}
+td, th{
+    padding: 5px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+table {
+    width: 85%;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 8%;
+}
+div.ellips{
+    display: inline-block;
+    vertical-align: centr;
+}
+p.ellips1{
+    font-size: 0.8em; 
+    opacity: 0.7;
+    margin-top: 0.1em;
+    margin-bottom: 0.5em;
+}
