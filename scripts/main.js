@@ -1,3 +1,4 @@
+function getRequest() {
 fetch('https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,dogecoin,tron,cosmos,stellar,litecoin,zcash,ren') //получение цены монет
     .then(response => response.json())
     .then(commits  => {
@@ -32,5 +33,5 @@ fetch('https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,dogecoin,tron,cosmo
         document.getElementById("ZC2").innerHTML = parseInt(commits.data[7].changePercent24Hr * 1000) / 1000 + " %"; 
         document.getElementById("REN2").innerHTML = parseInt(commits.data[8].changePercent24Hr * 1000) / 1000 + " %" 
     });
-
-    
+  }
+  setInterval(getRequest, 500)
