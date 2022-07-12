@@ -1,237 +1,43 @@
-fetch('https://api.coincap.io/v2/assets/bitcoin')
+fetch('https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,dogecoin,tron,cosmos,stellar,litecoin,zcash,ren') //получение цены монет
     .then(response => response.json())
     .then(commits  => {
-        let bitc = commits.data.priceUsd;
-        const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 50000)
-        fetch('https://api.coincap.io/v2/assets/bitcoin', {
-            signal: controller.signal
-            })
-        .then(response => response.json())
-        .then(commits =>{
-            let test = commits.data.priceUsd;
-            console.log("this is test" + test);
-            console.log("bitcoin" + bitc);
-
-            if(bitc < test){
-                document.getElementById("demo").innerHTML = '<span style="color:red;">' +
-                parseInt(bitc * 10000) / 10000 + " $" + '</span>'; 
-            }if(bitc > test){
-                document.getElementById("demo").innerHTML = '<span style="color:green;">' +
-                parseInt(test * 1000) / 1000 + " $" + '</span>'; 
-            }
-        });
-
-            document.getElementById("demo").innerHTML = parseInt(commits.data.priceUsd * 100) / 100 + " $"
+        console.log(commits.data)
+        document.getElementById("BTC").innerHTML = parseInt(commits.data[0].priceUsd * 1000) / 1000 + " $";
+        document.getElementById("ETH").innerHTML = parseInt(commits.data[1].priceUsd * 1000) / 1000 + " $";
+        document.getElementById("DOG").innerHTML = parseInt(commits.data[2].priceUsd * 1000) / 1000 + " $";
+        document.getElementById("TRON").innerHTML = parseInt(commits.data[3].priceUsd * 1000) / 1000 + " $"
+        document.getElementById("LT").innerHTML = parseInt(commits.data[4].priceUsd * 1000) / 1000 + " $";
+        document.getElementById("STL").innerHTML = parseInt(commits.data[5].priceUsd * 1000) / 1000 + " $";
+        document.getElementById("COSM").innerHTML = parseInt(commits.data[6].priceUsd * 1000) / 1000 + " $";
+        document.getElementById("ZC").innerHTML = parseInt(commits.data[7].priceUsd * 1000) / 1000 + " $";
+        document.getElementById("REN").innerHTML = parseInt(commits.data[8].priceUsd * 1000) / 1000 + " $" 
     });
-            
-        
-fetch('https://api.coincap.io/v2/assets/ethereum')
-    .then(response => response.json())
-    .then(commits => document.getElementById("eth").innerHTML = parseInt(commits.data.priceUsd * 100) / 100 + " $");
-
-fetch('https://api.coincap.io/v2/assets/dogecoin')
-    .then(response => response.json())
-    .then(commits => document.getElementById("dog").innerHTML = parseInt(commits.data.priceUsd * 10000) / 10000 + " $");
-
-fetch('https://api.coincap.io/v2/assets/tron')
-    .then(response => response.json())
-    .then(commits => document.getElementById("tro").innerHTML = parseInt(commits.data.priceUsd * 10000) / 10000 + " $");
-
-fetch('https://api.coincap.io/v2/assets/cosmos')
-    .then(response => response.json())
-    .then(commits => document.getElementById("cosm").innerHTML = parseInt(commits.data.priceUsd * 10000) / 10000 + " $");
-
-fetch('https://api.coincap.io/v2/assets/stellar')
-    .then(response => response.json())
-    .then(commits => document.getElementById("st").innerHTML = parseInt(commits.data.priceUsd * 10000) / 10000 + " $");
-
-fetch('https://api.coincap.io/v2/assets/litecoin')
-    .then(response => response.json())
-    .then(commits => document.getElementById("lt").innerHTML = parseInt(commits.data.priceUsd * 100) / 100 + " $");
-
-fetch('https://api.coincap.io/v2/assets/zcash')
-    .then(response => response.json())
-    .then(commits => document.getElementById("ztc").innerHTML = parseInt(commits.data.priceUsd * 100) / 100 + " $");
-
-fetch('https://api.coincap.io/v2/assets/ren')
-    .then(response => response.json())
-    .then(commits => document.getElementById("re").innerHTML = parseInt(commits.data.priceUsd * 10000) / 10000 + " $");
    
-        //через WEBSOCKET
-        //if(a != undefined){
-        //document.getElementById("demo").innerHTML = a + "$";
-       //};
-       /*if(b != undefined){
-        document.getElementById("eth").innerHTML = b + " $";
-       };
-
-       if(c != undefined){
-        document.getElementById("dog").innerHTML = c + " $";
-       };
-       if(tr != undefined){
-        document.getElementById("tro").innerHTML = tr + " $";
-       };
-       if(cos != undefined){
-        document.getElementById("cosm").innerHTML = cos + " $";
-       };
-       if(stl != undefined){
-        document.getElementById("st").innerHTML = stl + " $";
-       };*/
-       //if(ltcc != undefined){
-        //document.getElementById("lt").innerHTML = ltcc + " $";
-       //};
-       /*if(zt != undefined){
-        document.getElementById("ztc").innerHTML = zt + " $";
-       };
-       if(r != undefined){
-        document.getElementById("re").innerHTML = r + " $";
-       };
-    }*/
-
-   
-fetch('https://api.coincap.io/v2/assets/bitcoin')
-    .then(response => response.json())
-    .then(commits => document.getElementById("demo1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-        
-fetch('https://api.coincap.io/v2/assets/ethereum')
-    .then(response => response.json())
-    .then(commits => document.getElementById("eth1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-        
-fetch('https://api.coincap.io/v2/assets/dogecoin')
-    .then(response => response.json())
-    .then(commits => document.getElementById("dog1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-        
-fetch('https://api.coincap.io/v2/assets/tron')
-    .then(response => response.json())
-    .then(commits => document.getElementById("tro1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-        
-fetch('https://api.coincap.io/v2/assets/cosmos')
-    .then(response => response.json())
-    .then(commits => document.getElementById("cosm1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-
-fetch('https://api.coincap.io/v2/assets/stellar')
-    .then(response => response.json())
-    .then(commits => document.getElementById("stel1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-        
-fetch('https://api.coincap.io/v2/assets/litecoin')
-    .then(response => response.json())
-    .then(commits => document.getElementById("lite1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-
-fetch('https://api.coincap.io/v2/assets/zcash')
-    .then(response => response.json())
-    .then(commits => document.getElementById("zc1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-        
-fetch('https://api.coincap.io/v2/assets/ren')
-    .then(response => response.json())
-    .then(commits => document.getElementById("ren1").innerHTML = Math.floor(commits.data.volumeUsd24Hr) + " $");
-        
-    
-fetch('https://api.coincap.io/v2/assets/bitcoin')
+fetch('https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,dogecoin,tron,cosmos,stellar,litecoin,zcash,ren') //получение объема продаж за последние 24 часа
     .then(response => response.json())
     .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("demo2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("demo2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
-    
-fetch('https://api.coincap.io/v2/assets/ethereum')
+        document.getElementById("BTC1").innerHTML = Math.floor(commits.data[0].volumeUsd24Hr) + " $";
+        document.getElementById("ETH1").innerHTML = Math.floor(commits.data[1].volumeUsd24Hr) + " $";
+        document.getElementById("DOG1").innerHTML = Math.floor(commits.data[2].volumeUsd24Hr) + " $";
+        document.getElementById("TRON1").innerHTML = Math.floor(commits.data[3].volumeUsd24Hr) + " $";
+        document.getElementById("LT1").innerHTML = Math.floor(commits.data[4].volumeUsd24Hr) + " $";
+        document.getElementById("STL1").innerHTML = Math.floor(commits.data[5].volumeUsd24Hr) + " $";
+        document.getElementById("COSM1").innerHTML = Math.floor(commits.data[6].volumeUsd24Hr) + " $";
+        document.getElementById("ZC1").innerHTML = Math.floor(commits.data[7].volumeUsd24Hr) + " $";
+        document.getElementById("REN1").innerHTML = Math.floor(commits.data[8].volumeUsd24Hr) + " $"
+    });
+fetch('https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,dogecoin,tron,cosmos,stellar,litecoin,zcash,ren') //изменение цены за последние 24 часа
     .then(response => response.json())
     .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("eth2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("eth2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
+        document.getElementById("BTC2").innerHTML = parseInt(commits.data[0].changePercent24Hr * 1000) / 1000 + " %";
+        document.getElementById("ETH2").innerHTML = parseInt(commits.data[1].changePercent24Hr * 1000) / 1000 + " %"; 
+        document.getElementById("DOG2").innerHTML = parseInt(commits.data[2].changePercent24Hr * 1000) / 1000 + " %"; 
+        document.getElementById("TRON2").innerHTML = parseInt(commits.data[3].changePercent24Hr * 1000) / 1000 + " %"; 
+        document.getElementById("LT2").innerHTML = parseInt(commits.data[4].changePercent24Hr * 1000) / 1000 + " %"; 
+        document.getElementById("STL2").innerHTML = parseInt(commits.data[5].changePercent24Hr * 1000) / 1000 + " %"; 
+        document.getElementById("COSM2").innerHTML = parseInt(commits.data[6].changePercent24Hr * 1000) / 1000 + " %"; 
+        document.getElementById("ZC2").innerHTML = parseInt(commits.data[7].changePercent24Hr * 1000) / 1000 + " %"; 
+        document.getElementById("REN2").innerHTML = parseInt(commits.data[8].changePercent24Hr * 1000) / 1000 + " %";  
+    });
 
-fetch('https://api.coincap.io/v2/assets/dogecoin')
-    .then(response => response.json())
-    .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("dog2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-         } else {
-            document.getElementById("dog2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-         }
-    })
-
-fetch('https://api.coincap.io/v2/assets/tron')
-    .then(response => response.json())
-    .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("tro2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("tro2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
-
-fetch('https://api.coincap.io/v2/assets/cosmos')
-    .then(response => response.json())
-    .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("cosm2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("cosm2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
-
-fetch('https://api.coincap.io/v2/assets/litecoin')
-    .then(response => response.json())
-    .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("lite2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("lite2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
-
-fetch('https://api.coincap.io/v2/assets/zcash')
-    .then(response => response.json())
-    .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("zc2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("zc2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
-
-fetch('https://api.coincap.io/v2/assets/ren')
-    .then(response => response.json())
-    .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("ren2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("ren2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
-
-fetch('https://api.coincap.io/v2/assets/stellar')
-    .then(response => response.json())
-    .then(commits => {
-        if ( parseInt(commits.data.changePercent24Hr * 1000) / 1000 > 0) {
-            document.getElementById("stel2").innerHTML = '<span style="color:green;">+' +
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        } else {
-            document.getElementById("stel2").innerHTML = '<span style="color:red;">' + 
-            parseInt(commits.data.changePercent24Hr * 1000) / 1000 + " %" + '</span>'; 
-        }
-    })
     
