@@ -4,25 +4,30 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="vendors/materialize/materialize.min.css"  media="screen,projection"/>
         <link rel="stylesheet" type="text/css" href="styles/style.css" />
+       
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
         <script type="text/javascript" src="vendors/materialize.min.js"></script>
         <script type="text/javascript" src="scripts/main.js"></script>
+        <nav>
+          <div class="nav-wrapper">
+            <a class="brand-logo">Конвертер криптовалют</a>
+          </div>
+        </nav>
         <div class="container">
           <div class="row">
-            
               <div class="convert">
                 
                   <div class="input-field col s6">
-                    <input type="text" class="validate" placeholder="BTC" id="input">
+                    <input type="text" class="validate" id="input">
                     <label for="input"></label>
                   </div>
                   
                   <div class="input-field col s3">
-                    <select class="browser-default">
-                      <option value="" disabled selected></option>
-                      <option value="btc">Bitcoin</option>
+                    <select class="browser-default" id="from_curency">
+                      
+                      <option value="bitcoin">Bitcoin</option>
                       <option value="et">Ethereum</option>
                       <option value="stl">Stellar</option>
                       <option value="dog">Dogecoin</option>
@@ -35,12 +40,12 @@
                   <p></p>
                   </div>
                   <div class="input-field col s6">
-                    <input type="text" class="validate" placeholder="ETH" id="output">
+                    <input type="text" class="validate" id="output">
                     <label for="output"></label>
                   </div>
                   
                   <div class="input-field col s3">
-                    <select class="browser-default">
+                    <select class="browser-default" id="to_curency">
                       <option value="" disabled selected></option>
                       <option value="btc">Bitcoin</option>
                       <option value="et">Ethereum</option>
@@ -165,5 +170,11 @@
                 
             </div>
         </div>
+        <footer class="page-footer">
+            <div class="container">
+            © 2022 Copyright PracticAddCode
+            <a class="grey-text text-lighten-4 right"></a>
+            </div>
+        </footer>
     </body>
 </html>
