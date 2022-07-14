@@ -10,7 +10,7 @@ const mapAssetFromDto = (assetDto) =>( {
   name: assetDto.id,
   priceUSD: parseInt(assetDto.priceUsd * 1000) / 1000,
   volume: parseInt(assetDto.volumeUsd24Hr * 1000) /1000,
-  
+  change: parseInt(assetDto.changePercent24Hr * 1000) /1000,
 });
 
 const getAssets = () =>
