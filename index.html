@@ -7,18 +7,16 @@
     </head>
     <body>
        <script src="https://unpkg.com/vue@3"></script>
-       <script type="text/javascript" src="vendors/materialize.min.js"></script>
-
-        <nav>
-          <div class="nav-wrapper">
-            <a class="brand-logo center">Конвертер криптовалют</a>
-          </div>
-        </nav>
+       <script type="text/javascript" src="vendors/materialize/materialize.min.js"></script>
 
         <div id="app">
+          <nav>
+            <div class="nav-wrapper">
+              <a class="brand-logo center">Конвертер криптовалют</a>
+            </div>
+          </nav>
             <div class="row">
                 <div class="convert">
-
                     <div class="input-field col s6">
                       <input type="number" class="validate" id="input" value=1>
                       <label for="input"></label>
@@ -90,14 +88,14 @@
                       </thead>
                       <tbody>
                         <tr
-                          v-for="{ assetId, name, priceUSD, volume, change } in assets"
+                          v-for="{ symbol,  id,  priceUsd, volumeUsd24Hr, changePercent24Hr } in assets"
                           :key="assetId"
                         >
-                          <td>{{ assetId }}</td>
-                          <td>{{ name }}</td>
-                          <td>{{ priceUSD }} $</td>
-                          <td>{{ volume }} $ </td>
-                          <td>{{ change }} % </td>
+                          <td>{{ symbol }}</td>
+                          <td>{{  id }}</td>
+                          <td>{{ priceUsd }} $</td>
+                          <td>{{ volumeUsd24Hr }} $ </td>
+                          <td>{{ changePercent24Hr }} % </td>
                         </tr>
                       </tbody>
                     </table>
