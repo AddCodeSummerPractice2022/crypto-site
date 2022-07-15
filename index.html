@@ -1,181 +1,309 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="vendors/materialize/materialize.min.css"  media="screen,projection"/>
-        <link rel="stylesheet" type="text/css" href="styles/style.css" />
-       
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <script type="text/javascript" src="vendors/materialize.min.js"></script>
-        <script type="text/javascript" src="scripts/main.js"></script>
-        <nav>
-          <div class="nav-wrapper">
-            <a class="brand-logo center">Конвертер криптовалют</a>
-          </div>
-        </nav>
-        <div class="container">
-          <div class="row">
-              <div class="convert">
-                
-                  <div class="input-field col s6">
-                    <input type="number" class="validate" id="input" value=1>
-                    <label for="input"></label>
-                  </div>
-                  
-                  <div class="input-field col s3">
-                    <select class="browser-default" id="from_curency">
-                      
-                      <option value="bitcoin">BTC</option>
-                      <option value="ethereum">ETH</option>
-                      <option value="stellar">XLM</option>
-                      <option value="dogecoin">DOGE</option>
-                      <option value="tron">TRX</option>
-                      <option value="cosmos">ATOM</option>
-                      <option value="litecoin">LTC</option>
-                      <option value="zcash">ZEC</option>
-                      <option value="ren">REN</option>
-                    </select>
-                    
-                  <p></p>
-                  </div>
-                  
-                  <div class="input-field col s6">
-                    <input type="number" class="validate" id="output" >
-                    <label for="output"></label>
-                  </div>
-                  
-                  <div class="input-field col s3">
-                    <select class="browser-default" id="to_curency">
-                      <option value="bitcoin">BTC</option>
-                      <option value="ethereum">ETH</option>
-                      <option value="stellar">XLM</option>
-                      <option value="dogecoin">DOGE</option>
-                      <option value="tron">TRX</option>
-                      <option value="cosmos">ATOM</option>
-                      <option value="litecoin">LTC</option>
-                      <option value="zcash">ZEC</option>
-                      <option value="ren">REN</option>
-                    </select>
-                  </div>
-                   
-              </div>
-            
-              <div class="col s9 pull-s1">
-                    <table class="listcoin">
-                        <thead>
-                          <tr>
-                              <th>Name</th>
-                              <th>Price</th>
-                              <th>Transaction(24h)</th>
-                              <th>Change(24h)</th>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crypto quotes</title>
 
-                          </tr>
-                        </thead>
-                
-                        <tbody>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/btc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95386.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='bitcoin'">Bitcoin</a><p class="ellips1">BTC</p></div>
-                            </td>
-                            <td id="BTC" ></td>
-                            <td id="BTC1" ></td>
-                            <td id="BTC2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata">
-                                <img src="assets/images/eth-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95451.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='ethereum'">
-                                Ethereum</a><p class="ellips1">ETH</p></div>
-                            </td>
-                            <td id="ETH" ></td>
-                            <td id="ETH1" ></td>
-                            <td id="ETH2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata">
-                                <img src="assets/images/xlm-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95842.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='stellar'">
-                                Stellar</a><p class="ellips1" >XLM</p></div>
-                            </td>
-                            <td id="STL" ></td>
-                            <td id="STL1" ></td>
-                            <td id="STL2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/doge-cryptocurrencies-icon-188394.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='dogecoin'">
-                                Dogecoin</a><p class="ellips1">DOGE</p></div>
-                            </td>
-                            <td id="DOG" ></td>
-                            <td id="DOG1" ></td>
-                            <td id="DOG2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/trx-cryptocurrencies-icon-188339.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='tron'">
-                                TRON</a><p class="ellips1">TRX</p></div>
-                            </td>
-                            <td id="TRON" ></td>
-                            <td id="TRON1" ></td>
-                            <td id="TRON2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/atom-cryptocurrency-logo-icon-131473.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='cosmos'">
-                                Cosmos</a><p class="ellips1">ATOM</p></div>
-                            </td>
-                            <td id="COSM" ></td>
-                            <td id="COSM1" ></td>
-                            <td id="COSM2"></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/ltc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95509.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='litecoin'">
-                                Litecoin</a><p class="ellips1">LTC</p></div>
-                            </td>
-                            <td id="LT" ></td>
-                            <td id="LT1" ></td>
-                            <td id="LT2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/zec-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95522.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='zcash'">
-                                Zcash</a><p class="ellips1">ZEC</p></div>
-                            </td>
-                            <td id="ZC" ></td>
-                            <td id="ZC1" ></td>
-                            <td id="ZC2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/ren-cryptocurrency-logo-icon-131404.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='ren'">
-                                Ren</a><p class="ellips1">REN</p></div>
-                            </td>
-                            <td id="REN" ></td>
-                            <td id="REN1" ></td>
-                            <td id="REN2" ></td>
-                          </tr>
-                        </tbody>
-                    
-                      </table>
-                </div>  
-                
+    <!-- material icons -->
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- materialize -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <style>
+      .cell-wrapper-centred {
+        display: flex;
+        align-items: center;
+      }
+
+      .transitioned {
+        transition: 0.125s all;
+      }
+
+      .arrow-icon {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <div id="app">
+      <div
+        style="
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <!-- status -> "loading" -->
+
+        <div v-if="loading" class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
             </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
         </div>
-        <footer class="page-footer">
-            <div class="container">
-            © 2022 Copyright PracticAddCode
-            <a class="grey-text text-lighten-4 right"></a>
-            </div>
-        </footer>
-    </body>
+
+        <!-- status -> "failure" -->
+
+        <div v-else-if="isNonNullableError">
+          <h2>Ooops, something went wrong :(</h2>
+        </div>
+
+        <!-- status -> "success" -->
+
+        <div v-else-if="isNonNullableAssets" class="container">
+          <div
+            style="
+              height: 100vh;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            "
+          >
+            <h1>crypto quotes</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>symbol</th>
+                  <th>name</th>
+                  <th>price (USD)</th>
+                  <th>change (24h)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="{ id, symbol, name, priceUSD, change } in assets"
+                  :key="id"
+                >
+                  <td>{{ symbol}}</td>
+                  <td>{{ name }}</td>
+                  <td
+                    class="transitioned"
+                    :style="{ color: getPriceColor(id) }"
+                  >
+                    <div class="cell-wrapper-centred">
+                      ${{ priceUSD }}
+                      <i
+                        v-if="getPriceIcon(id) !== null"
+                        class="material-icons arrow-icon transitioned"
+                      >
+                        {{ getPriceIcon(id) }}
+                      </i>
+                    </div>
+                  </td>
+                  <td
+                    class="transitioned"
+                    :style="{ color: getChangeColor(change) }"
+                  >
+                    <div class="cell-wrapper-centred">
+                      <i
+                        v-if="getChangeIcon(change) !== null"
+                        class="material-icons arrow-icon transitioned"
+                      >
+                        {{ getChangeIcon(change) }}
+                      </i>
+                      {{ change }}%
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const { createApp, ref, computed, onMounted } = Vue;
+
+      const quotes = [
+        "bitcoin",
+        "ethereum",
+        "dogecoin",
+        "tron",
+        "cosmos",
+        "stellar",
+        "litecoin",
+        "zcash",
+        "ren",
+        "tether",
+      ];
+
+      // utils
+
+      const mapToNumberWithFixing = (str) => Number(str).toFixed(2);
+
+      const cmp = (self, other) => {
+        switch (true) {
+          case self > other:
+            return "less";
+          case self === other:
+            return "equal";
+          case self < other:
+            return "greater";
+        }
+      };
+
+      // assets
+
+      const mapAssetFromDto = (assetDto) => ({
+        id: assetDto.id,
+        symbol: assetDto.symbol,
+        name: assetDto.name,
+        priceUSD: mapToNumberWithFixing(assetDto.priceUsd),
+        volume: mapToNumberWithFixing(assetDto.volumeUsd24Hr),
+        change: mapToNumberWithFixing(assetDto.changePercent24Hr),
+      });
+
+      const getAssets = () =>
+        fetch(`https://api.coincap.io/v2/assets?ids=${quotes.join(",")}`)
+          .then((response) => response.json())
+          .then(({ data }) =>
+            data.map((assetDto) => mapAssetFromDto(assetDto))
+          );
+
+      // socket
+
+      const makeCoinCapSocket = () =>
+        new WebSocket(`wss://ws.coincap.io/prices?assets=${quotes.join(",")}`);
+
+      // vue app
+
+      createApp({
+        setup() {
+          const loading = ref(false);
+          const error = ref(null);
+          const assets = ref(null);
+          const diffAssets = ref({});
+          const wsRef = ref(null);
+
+          const isNonNullableError = computed(() => error.value !== null);
+          const isNonNullableAssets = computed(() => assets.value !== null);
+
+          // mappers
+
+          const mapColorFromOrdering = (ordering) => {
+            switch (ordering) {
+              case "less":
+                return "red";
+              case "equal":
+                return "black";
+              case "greater":
+                return "green";
+            }
+          };
+
+          const mapIconFromOrdering = (ordering) => {
+            switch (ordering) {
+              case "less":
+                return "arrow_drop_down";
+              case "equal":
+                return null;
+              case "greater":
+                return "arrow_drop_up";
+            }
+          };
+
+          // getters
+
+          const getChangeColor = (change) => {
+            const ordering = cmp(0, change);
+
+            return mapColorFromOrdering(ordering);
+          };
+
+          const getChangeIcon = (change) => {
+            const ordering = cmp(0, change);
+
+            return mapIconFromOrdering(ordering);
+          };
+
+          const getPriceColor = (id) =>
+            mapColorFromOrdering(diffAssets.value[id]);
+
+          const getPriceIcon = (id) =>
+            mapIconFromOrdering(diffAssets.value[id]);
+
+          // update assets state
+
+          const updateAssetPriceUSD = (id, priceUSD) => {
+            assets.value = assets.value.map((asset) =>
+              asset.id === id ? { ...asset, priceUSD: priceUSD } : asset
+            );
+          };
+
+          const updateDiffAsset = (id, priceUSD) => {
+            const existAsset = assets.value.find((asset) => asset.id === id);
+
+            diffAssets.value[id] = cmp(existAsset.priceUSD, priceUSD);
+          };
+
+          // handle web socket on message
+
+          const handleMessageSocket = ({ data }) => {
+            const deserializedData = JSON.parse(data);
+
+            for (const [id, priceUsd] of Object.entries(deserializedData)) {
+              const mappedPriceUSD = mapToNumberWithFixing(priceUsd);
+
+              updateDiffAsset(id, mappedPriceUSD);
+              updateAssetPriceUSD(id, mappedPriceUSD);
+            }
+          };
+
+          onMounted(async () => {
+            try {
+              loading.value = true;
+              assets.value = await getAssets();
+            } catch (err) {
+              console.error(err);
+              error.value = err;
+            } finally {
+              loading.value = false;
+            }
+          });
+
+          onMounted(async () => {
+            wsRef.value = makeCoinCapSocket();
+
+            wsRef.value.onmessage = handleMessageSocket;
+          });
+
+          return {
+            loading,
+            error,
+            assets,
+            isNonNullableError,
+            isNonNullableAssets,
+            getChangeColor,
+            getChangeIcon,
+            getPriceColor,
+            getPriceIcon,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
 </html>
