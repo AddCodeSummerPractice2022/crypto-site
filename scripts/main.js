@@ -1,29 +1,21 @@
 const { createApp } = Vue;
 
-const quotes = ["bitcoin","ethereum","dogecoin","tron","cosmos","stellar","litecoin","zcash","ren"];
-
-const prepareHttpRequest = (url) =>
-  fetch(url).then((response) => response.json());
-
-const mapAssetFromDto = (assetDto) =>( {
-  assetId: assetDto.symbol,
-  name: assetDto.id,
-  priceUSD: parseInt(assetDto.priceUsd * 1000) / 1000,
-  volume: parseInt(assetDto.volumeUsd24Hr * 1000) /1000,
-  change: parseInt(assetDto.changePercent24Hr * 1000) /1000,
+const FromAssets = (coins) =>( {
+  assetId: coins.symbol,
+  name: coins.id,
+  priceUSD:Number(coins.priceUsd).toFixed(3) ,
+  volume: Number(coins.volumeUsd24Hr).toFixed(3),
+  change: Number(coins.changePercent24Hr).toFixed(3),
 });
 
 const getAssets = () =>
-  prepareHttpRequest(
-    `https://api.coincap.io/v2/assets?ids=${quotes.join(
-      ","
-    )}`)
-    .then((data) =>
-    data.data.map((assetDto) => mapAssetFromDto(assetDto))
-  );
-
+    fetch('https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,dogecoin,tron,cosmos,stellar,litecoin,zcash,ren')
+    .then((response) => response.json())
+    .then((commits) => 
+      commits.data.map((coins) =>
+      FromAssets(coins)))
+  
 // vue app
-
 createApp({
   data() {
     return {
@@ -42,6 +34,7 @@ createApp({
     },
   },
   async mounted() {
+   
     try {
       this.loading = true;
       this.assets = await getAssets();
@@ -51,5 +44,4 @@ createApp({
     } finally {
       this.loading = false;
     }
-  },
-}).mount("#app");
+  }}).mount("#app");
