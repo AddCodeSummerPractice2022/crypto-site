@@ -1,19 +1,19 @@
 const { createApp } = Vue;
 
-const FromAssets = (coins) =>( {
-  assetId: coins.symbol,
-  name: coins.id,
-  priceUSD:Number(coins.priceUsd).toFixed(3) ,
-  volume: Number(coins.volumeUsd24Hr).toFixed(3),
-  change: Number(coins.changePercent24Hr).toFixed(3),
+const mapAssetFromDto = (assetDto) =>( {
+  symbol: assetDto.symbol,
+  id: assetDto.id,
+  priceUsd:Number(assetDto.priceUsd).toFixed(3) ,
+  volumeUsd24Hr: Number(assetDto.volumeUsd24Hr).toFixed(3),
+  changePercent24Hr: Number(assetDto.changePercent24Hr).toFixed(3),
 });
 
 const getAssets = () =>
     fetch('https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,dogecoin,tron,cosmos,stellar,litecoin,zcash,ren')
     .then((response) => response.json())
     .then((commits) => 
-      commits.data.map((coins) =>
-      FromAssets(coins)))
+      commits.data.map((assetDto) =>
+      mapAssetFromDto(assetDto)))
   
 // vue app
 createApp({
@@ -45,3 +45,4 @@ createApp({
       this.loading = false;
     }
   }}).mount("#app");
+
