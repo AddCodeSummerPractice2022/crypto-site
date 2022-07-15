@@ -1,36 +1,30 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="vendors/materialize/materialize.min.css"  media="screen,projection"/>
         <link rel="stylesheet" type="text/css" href="styles/style.css" />
-       
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-      <script src="https://unpkg.com/vue@3"></script>
-      
-        <script type="text/javascript" src="vendors/materialize.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        
+       <script src="https://unpkg.com/vue@3"></script>
+       <script type="text/javascript" src="vendors/materialize.min.js"></script>
+
         <nav>
           <div class="nav-wrapper">
             <a class="brand-logo center">Конвертер криптовалют</a>
           </div>
         </nav>
+
         <div id="app">
-          <div class="container">
             <div class="row">
                 <div class="convert">
-                  
+
                     <div class="input-field col s6">
                       <input type="number" class="validate" id="input" value=1>
                       <label for="input"></label>
                     </div>
-                    
                     <div class="input-field col s3">
                       <select class="browser-default" id="from_curency">
-                        
                         <option value="bitcoin">BTC</option>
                         <option value="ethereum">ETH</option>
                         <option value="stellar">XLM</option>
@@ -41,15 +35,13 @@
                         <option value="zcash">ZEC</option>
                         <option value="ren">REN</option>
                       </select>
-                      
                     <p></p>
+
                     </div>
-                    
                     <div class="input-field col s6">
                       <input type="number" class="validate" id="output" >
                       <label for="output"></label>
                     </div>
-                    
                     <div class="input-field col s3">
                       <select class="browser-default" id="to_curency">
                         <option value="bitcoin">BTC</option>
@@ -62,32 +54,33 @@
                         <option value="zcash">ZEC</option>
                         <option value="ren">REN</option>
                       </select>
-                    </div>
-                     
+                    </div> 
+
                 </div>
+
                 <div v-if="loading" class="preloader-wrapper big active">
-                  <div class="spinner-layer spinner-blue-only">
-                    <div class="circle-clipper left">
-                      <div class="circle"></div>
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
                     </div>
-                    <div class="gap-patch">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                      <div class="circle"></div>
-                    </div>
-                  </div>
                 </div>
-        
+               
                 <div v-else-if="isNonEmptyError">
-                  <h2>Ooops, something went wrong :(</h2>
+                  <h3>Ooops, something went wrong :(</h3>
                 </div>
-                <div class="col s9 pull-s1">  
-                  <div v-else-if="isNonEmptyAssets" class="container">
+                
+                <div v-else-if="isNonEmptyAssets" class="container">
+                  <div class="col s9 pull-s1">  
                     <table class="listcoin">
                       <thead>
                         <tr>
-                          <th></th>
                           <th>id</th>
                           <th>name</th>
                           <th>price</th>
@@ -97,16 +90,9 @@
                       </thead>
                       <tbody>
                         <tr
-                          v-for="{ assetId, name, priceUSD, iconURL, volume, change } in assets"
+                          v-for="{ assetId, name, priceUSD, volume, change } in assets"
                           :key="assetId"
                         >
-                          <td>
-                            <img
-                              :src="iconURL"
-                              :alt="name"
-                              style="width: 30px; height: 30px"
-                            />
-                          </td>
                           <td>{{ assetId }}</td>
                           <td>{{ name }}</td>
                           <td>{{ priceUSD }} $</td>
@@ -119,9 +105,6 @@
                 </div>
               </div>
             </div>
-          </div>
           <script type="text/javascript" src="scripts/main.js"></script>
-        
-    </body>
-   
+      </body>
 </html>
