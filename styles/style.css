@@ -1,35 +1,6 @@
-.responsive-img{
-    max-width: 25%;
-    height: 25%;
+.container {
+    margin-top: 15%;
 }
-.tabledata{
-    padding: 5px 5px;
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-    border-radius: 2px;
-}
-.listcoin {
-    width: 85%;
-    display: table;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-top: 8%;
-}
-.ellips{
-    display: inline-block;
-    vertical-align: centr;
-}
-.ellips1{
-    font-size: 0.8em; 
-    opacity: 0.7;
-    margin-top: 0.1em;
-    margin-bottom: 0.5em;
-}
-.convert{
-    position: fixed;
-    margin-top: 10%;
-    width: none;
-    left: 66.6666666667%;
-    
+.title-field {
+    border: 1px solid darkblue;
 }

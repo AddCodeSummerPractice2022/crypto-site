@@ -8,174 +8,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <script type="text/javascript" src="vendors/materialize.min.js"></script>
-        <script type="text/javascript" src="scripts/main.js"></script>
-        <nav>
-          <div class="nav-wrapper">
-            <a class="brand-logo center">Конвертер криптовалют</a>
-          </div>
-        </nav>
-        <div class="container">
-          <div class="row">
-              <div class="convert">
-                
-                  <div class="input-field col s6">
-                    <input type="number" class="validate" id="input" value=1>
-                    <label for="input"></label>
-                  </div>
-                  
-                  <div class="input-field col s3">
-                    <select class="browser-default" id="from_curency">
-                      
-                      <option value="bitcoin">BTC</option>
-                      <option value="ethereum">ETH</option>
-                      <option value="stellar">XLM</option>
-                      <option value="dogecoin">DOGE</option>
-                      <option value="tron">TRX</option>
-                      <option value="cosmos">ATOM</option>
-                      <option value="litecoin">LTC</option>
-                      <option value="zcash">ZEC</option>
-                      <option value="ren">REN</option>
-                    </select>
-                    
-                  <p></p>
-                  </div>
-                  
-                  <div class="input-field col s6">
-                    <input type="number" class="validate" id="output" >
-                    <label for="output"></label>
-                  </div>
-                  
-                  <div class="input-field col s3">
-                    <select class="browser-default" id="to_curency">
-                      <option value="bitcoin">BTC</option>
-                      <option value="ethereum">ETH</option>
-                      <option value="stellar">XLM</option>
-                      <option value="dogecoin">DOGE</option>
-                      <option value="tron">TRX</option>
-                      <option value="cosmos">ATOM</option>
-                      <option value="litecoin">LTC</option>
-                      <option value="zcash">ZEC</option>
-                      <option value="ren">REN</option>
-                    </select>
-                  </div>
-                   
-              </div>
-            
-              <div class="col s9 pull-s1">
-                    <table class="listcoin">
-                        <thead>
-                          <tr>
-                              <th>Name</th>
-                              <th>Price</th>
-                              <th>Transaction(24h)</th>
-                              <th>Change(24h)</th>
+      <script type="text/javascript" src="vendors/materialize/materialize.min.js"></script>
+      <script type="text/javascript" src="scripts/main.js"></script>
+      <div class="container">
+        <div class="row">
+         <div class="convert">
 
-                          </tr>
-                        </thead>
-                
-                        <tbody>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/btc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95386.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='bitcoin'">Bitcoin</a><p class="ellips1">BTC</p></div>
-                            </td>
-                            <td id="BTC" ></td>
-                            <td id="BTC1" ></td>
-                            <td id="BTC2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata">
-                                <img src="assets/images/eth-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95451.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='ethereum'">
-                                Ethereum</a><p class="ellips1">ETH</p></div>
-                            </td>
-                            <td id="ETH" ></td>
-                            <td id="ETH1" ></td>
-                            <td id="ETH2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata">
-                                <img src="assets/images/xlm-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95842.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='stellar'">
-                                Stellar</a><p class="ellips1" >XLM</p></div>
-                            </td>
-                            <td id="STL" ></td>
-                            <td id="STL1" ></td>
-                            <td id="STL2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/doge-cryptocurrencies-icon-188394.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='dogecoin'">
-                                Dogecoin</a><p class="ellips1">DOGE</p></div>
-                            </td>
-                            <td id="DOG" ></td>
-                            <td id="DOG1" ></td>
-                            <td id="DOG2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/trx-cryptocurrencies-icon-188339.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='tron'">
-                                TRON</a><p class="ellips1">TRX</p></div>
-                            </td>
-                            <td id="TRON" ></td>
-                            <td id="TRON1" ></td>
-                            <td id="TRON2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/atom-cryptocurrency-logo-icon-131473.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='cosmos'">
-                                Cosmos</a><p class="ellips1">ATOM</p></div>
-                            </td>
-                            <td id="COSM" ></td>
-                            <td id="COSM1" ></td>
-                            <td id="COSM2"></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/ltc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95509.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='litecoin'">
-                                Litecoin</a><p class="ellips1">LTC</p></div>
-                            </td>
-                            <td id="LT" ></td>
-                            <td id="LT1" ></td>
-                            <td id="LT2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/zec-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95522.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='zcash'">
-                                Zcash</a><p class="ellips1">ZEC</p></div>
-                            </td>
-                            <td id="ZC" ></td>
-                            <td id="ZC1" ></td>
-                            <td id="ZC2" ></td>
-                          </tr>
-                          <tr>
-                            <td class="tabledata"> 
-                                <img src="assets/images/ren-cryptocurrency-logo-icon-131404.png" class="responsive-img">
-                                <div class="ellips"><a href="#" onClick="document.getElementById('from_curency').value='ren'">
-                                Ren</a><p class="ellips1">REN</p></div>
-                            </td>
-                            <td id="REN" ></td>
-                            <td id="REN1" ></td>
-                            <td id="REN2" ></td>
-                          </tr>
-                        </tbody>
-                    
-                      </table>
-                </div>  
-                
-            </div>
-        </div>
-        <footer class="page-footer">
-            <div class="container">
-            © 2022 Copyright PracticAddCode
-            <a class="grey-text text-lighten-4 right"></a>
-            </div>
-        </footer>
-    </body>
+          <div class="title-field col s12 center-align">
+            <p id="title-in"> Before conversion: </p>
+          </div>
+
+          <div class="input-field col s6">
+            <input  placeholder="Input" id="input" />
+          </div>
+
+          <div class="input-field col s6">
+            <select class="browser-default" id="from_curency">
+              <option value="" disabled selected>Please select one</option>
+              <option value="bitcoin">BTC</option>
+              <option value="ethereum">ETH</option>
+              <option value="stellar">XLM</option>
+              <option value="dogecoin">DOGE</option>
+              <option value="tron">TRX</option>
+              <option value="cosmos">ATOM</option>
+              <option value="litecoin">LTC</option>
+              <option value="zcash">ZEC</option>
+              <option value="ren">REN</option>
+            </select>
+          </div>
+
+          <div class="title-field col s12 center-align">
+            <p id="title-out"> After converting: </p>
+          </div>
+
+          <div class="input-field col s6">
+            <p id="output"> Output </p>
+          </div>
+
+          <div class="input-field col s6">
+            <select class="browser-default" id="to_curency">
+              <option value="" disabled selected>Please select one</option>
+              <option value="bitcoin">BTC</option>
+              <option value="ethereum">ETH</option>
+              <option value="stellar">XLM</option>
+              <option value="dogecoin">DOGE</option>
+              <option value="tron">TRX</option>
+              <option value="cosmos">ATOM</option>
+              <option value="litecoin">LTC</option>
+              <option value="zcash">ZEC</option>
+              <option value="ren">REN</option>
+            </select>
+          </div>
+        </div>                
+      </div>
+    </div>
+  </body>
 </html>
